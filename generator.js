@@ -5,6 +5,10 @@ const generateReadMe = (response, followers, location, bioImage) => {
 
     ![followers](https://img.shields.io/badge/Followers-${followers}-brightgreen)
     ![location](https://img.shields.io/badge/Location-${location}-blue)
+
+    ${response.description}
+
+    ***
     
     ## Table of Contents
     [Installation](#Installation)

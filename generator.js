@@ -1,29 +1,57 @@
 const fs = require("fs");
 
 const generateReadMe = (response, followers, location, bioImage) => {
-    return `![followers](https://img.shields.io/badge/Followers-${followers}-brightgreen)
-    # ${response.title}
-    ${response.description}
+    return `# ${response.title}
+
+    ![followers](https://img.shields.io/badge/Followers-${followers}-brightgreen)
+    ![location](https://img.shields.io/badge/Location-${location}-blue)
+    
     ## Table of Contents
-    - [Installation](#Installation)
-    - [Usage](#Usage)
-    - [Licensing](#Licensing)
-    - [Contribution](#Contribution)
-    - [Testing](#Testing)
-    - [Questions](#Questions)
-    ## Installation 
+    [Installation](#Installation)
+    
+    [Usage](#Usage)
+    
+    [Licensing](#Licensing)
+    
+    [Contributors](#Contributors)
+    
+    [Testing](#Testing)
+    
+    [Questions](#Questions)
+    
+    ***
+    
+    ## Installation
     ${response.install}
+    
+    
     ## Usage
     ${response.usage}
+    
+    
     ## Licensing
     ${response.license}
-    ## Contribution
+    
+    
+    ## Contributors
     ${response.contributors}
+    
+    
     ## Testing
     ${response.testing}
+    
+    
     ## Questions
-    Email: ${response.email}
-    ![alt txt](${bioImage})`
+    ${response.questions}
+    
+    
+    ***
+    
+    ### Email: ${response.email}
+    
+    ![bioImg](${bioImage})
+    
+    `
 }
 
 module.exports = generateReadMe;

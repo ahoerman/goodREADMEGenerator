@@ -1,9 +1,9 @@
-const generateReadMe = (response) => {
+const fs = require("fs");
 
-
-let newReadMe = `![last commit](https://img.shields.io/badge/Updated-${dateoflastupdate}-brightgreen)
-    # ${title}
-    ${description}
+const generateReadMe = (response, lastUpdate, bioImage) => {
+    return `![last commit](https://img.shields.io/badge/Updated-${lastUpdate}-brightgreen)
+    # ${response.title}
+    ${response.description}
     ## Table of Contents
     - [Installation](#Installation)
     - [Usage](#Usage)
@@ -12,26 +12,19 @@ let newReadMe = `![last commit](https://img.shields.io/badge/Updated-${dateoflas
     - [Testing](#Testing)
     - [Questions](#Questions)
     ## Installation 
-    ${installationInstruc}
+    ${response.install}
     ## Usage
-    ${usage}
+    ${response.usage}
     ## Licensing
-    ${license}
+    ${response.license}
     ## Contribution
-    ${contributors}
+    ${response.contributors}
     ## Testing
-    ${testing}
+    ${response.testing}
     ## Questions
-    Email: ${email}
-    ![alt txt](${bioimg})`
-
-fs.writeFile("README.txt", newReadMe, function(err){
-    if (err) {
-        throw err;
-    } else {
-        console.log("ReadMe successfully created!");
-    }
-});
+    ${response.questions}
+    Email: ${response.email}
+    ![alt txt](${bioImage}){:height="50px" width="50px"}`
 }
 
 module.exports = generateReadMe;

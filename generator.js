@@ -1,7 +1,8 @@
 const fs = require("fs");
 
-const generateReadMe = (response, lastUpdate, bioImage) => {
-    return `![last commit](https://img.shields.io/badge/Updated-${lastUpdate}-brightgreen)
+const generateReadMe = (response, followers, bioImage) => {
+    return `![Followers](https://img.shields.io/badge/Followers-${followers}-brightgreen)
+    ![Location](https://img.shields.io/badge/Location-${location}-blue)
     # ${response.title}
     ${response.description}
     ## Table of Contents

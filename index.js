@@ -51,9 +51,10 @@ inquirer
         let inqResponse = response;
 
         axios.get(queryURL).then(function(data){
-            let lastUpdate = data.data.updated_at
-            let bioImg = data.data.avatar_url
-            let newReadMe = generator(inqResponse, lastUpdate, bioImg);
+            let followers = data.data.followers;
+            let location = data.data.location;
+            let bioImg = data.data.avatar_url;
+            let newReadMe = generator(inqResponse, followers, location, bioImg);
             fs.writeFile("README.md", newReadMe, function(err){
                 if (err) {
                     throw err;
